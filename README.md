@@ -1,7 +1,7 @@
 pgcsv
 =====
 
-A 'pretty good' csv library for php
+A 'pretty good' CSV library for Php
 
 
 ### Writing
