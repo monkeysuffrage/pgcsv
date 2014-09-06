@@ -53,7 +53,7 @@ header("Content-Disposition: attachment; filename=file.csv");
 
 $fields = array('name', 'phone', 'address');
 
-$csv = new CSV('php://stdout', $fields);
+$csv = new CSV('php://output', $fields);
 
 $person = array(
   'name' => 'Jow Brown',
