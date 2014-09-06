@@ -43,3 +43,24 @@ foreach(CSV::iterate('input.csv') as $row){
 ```
 
 Iterating this way means the whole file does not need to be in memory.
+
+### CSV Generation
+-----------
+
+```php
+header("Content-type: text/csv");
+header("Content-Disposition: attachment; filename=file.csv");
+
+$fields = array('name', 'phone', 'address');
+
+$csv = new CSV('php://stdout', $fields);
+
+$person = array(
+  'name' => 'Jow Brown',
+  'phone' => '123 222-0123',
+  'address' => '666 Buckingham Palace'
+);
+
+$csv->save($person);
+$csv->close();
+```
