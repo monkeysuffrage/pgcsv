@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * PGCSV - A 'pretty good' csv library
  * Website: https://github.com/monkeysuffrage/pgcsv
@@ -115,7 +115,7 @@ class CSV{
     $this->fields = $fields;
     $this->delimiter = $delimiter;
     $this->encoding = $encoding;
-    $this->fh = fopen($filename, 'w');
+    if(!$this->fh = @fopen($filename, 'w')) die("Error opening $filename for writing, is it locked?");
     if('utf8' == $this->encoding) fputs($this->fh, BOM);
     fputcsv($this->fh, $fields, $this->delimiter);
   }
